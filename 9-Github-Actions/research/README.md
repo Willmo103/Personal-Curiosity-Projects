@@ -10,13 +10,15 @@ I Had a chat running where I was geting some tips on debuggig a portion of my te
 
 In a new chat window; "I need to understand the in's and outs of how to configure a github actions workflow" Intentially leaving it vague and letting my stored instructions guide the general response (Using flash for this).
 
-THe Response:
+### THe Response:
+
+---
 
 A GitHub Actions workflow is an automated process defined in a **YAML** file within the `.github/workflows` directory of your repository. It's triggered by specific events, such as a push to a branch or a pull request, and runs a series of jobs. Each job consists of one or more steps that execute commands or actions.
 
 -----
 
-### Anatomy of a Workflow File
+#### Anatomy of a Workflow File
 
 A workflow file is structured hierarchically. Here's a breakdown of the key components:
 
@@ -49,7 +51,7 @@ A workflow file is structured hierarchically. Here's a breakdown of the key comp
 
 -----
 
-### Key Concepts
+#### Key Concepts
 
   * **Actions**: Actions are the building blocks of a workflow. They can be developed by the community, by GitHub, or by you. The `uses` keyword references an action, typically in the format `owner/repo@version`.
   * **Runners**: These are the servers where your workflows run. GitHub provides hosted runners (`ubuntu-latest`, `windows-latest`, `macos-latest`) which are free for public repositories. You can also use self-hosted runners for more specific environments.
@@ -61,7 +63,7 @@ A workflow file is structured hierarchically. Here's a breakdown of the key comp
 
 -----
 
-### Example Workflow: Basic Build and Test
+#### Example Workflow: Basic Build and Test
 
 Here's a simple workflow to illustrate these concepts. This workflow runs on every push to the `main` branch, checks out the code, sets up Python, installs dependencies, and runs tests.
 
@@ -97,3 +99,6 @@ jobs:
       - name: Run tests
         run: pytest
 ```
+---
+Not a bad starting point and I've gathered this much from just looking over the configuration files. I think my issues are in that I need to better understand how Github manages stored secrets so I'm switching gears and am goiong to dig around in my repository settings for the repo I want to setup an action on (assuming that the secrets are at a repository security level and not the user level).
+
